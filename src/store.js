@@ -1,7 +1,7 @@
 import createStore from "redux-zero";
 const initialState = {
-    itunes : [],
-    googleBook : [],
+    listbooks : [],
+    equalBooks : [],
     selected: 0
 };
 
