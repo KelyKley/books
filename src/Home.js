@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import Utils from './Utils.js';
 import { Redirect, NavLink } from "react-router-dom";
-import {searchISBN} from './actions';
+import {searchISBN, selectBoard} from './actions';
 // import { NavLink, Redirect } from './C:/Users/Maryory/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-router-dom';
 import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
@@ -36,7 +36,7 @@ let list = '';
                 <h4><b>{item.title}</b></h4> 
                 <p>{item.author}</p> 
                 <p>{item.price}</p> 
-                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
+                <NavLink to="/details" onClick={() => selectBoard(index)} className="text-right button-sgte">Mas detalles...  </NavLink> 
             </div>
         </div>
         )

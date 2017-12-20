@@ -72,18 +72,6 @@ async function searchItunes(isbn) {
         price: itunesJSON.results[0].price
             }).key;
         }
-
-    // let clone = [...store.getState().itunes, {
-    //     author : itunesJSON.results[0].artistName,
-    //     title: itunesJSON.results[0].trackName,
-    //     description: itunesJSON.results[0].description,
-    //     img: itunesJSON.results[0].artworkUrl60,
-    //     price: itunesJSON.results[0].price
-    // }];
-    //     // clone = itunesJSON.results;
-    //     store.setState ({
-    //         itunes : clone
-    //     })
 }
 
 async function searchIGoogleBook(isbn) {
@@ -105,18 +93,8 @@ async function searchIGoogleBook(isbn) {
 
     });
     }
+}
 
-    // let clone = [...store.getState().googleBook, {
-    //     author : googleJSON.items[0].volumeInfo.authors[0],
-    //     title: googleJSON.items[0].volumeInfo.title,
-    //     description: googleJSON.items[0].volumeInfo.description,
-    //     img: googleJSON.items[0].volumeInfo.imageLinks.thumbnail,
-    //     price: googleJSON.items[0].saleInfo.listPrice.amount
-    // }
-    // ];
-    //     // clone = googleJSON.items;
-    //     store.setState ({
-    //         googleBook : clone
-    //     });
-        // console.log('store', store.getState().itunes, store.getState().googleBook)
+export const selectBoard = (index) => {
+    store.setState({selected: index})
 }
