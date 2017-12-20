@@ -45,7 +45,7 @@ let list = '';
       list = (<div>Ingresa Isbn</div>)
     }
     return(
-        <div className='row'>{list}</div>
+        <div className='sogo'>{list}</div>
     );
 }
 
