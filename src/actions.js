@@ -12,19 +12,22 @@ const snapshotToArray = (snapshot, isbn) => {
         list.push(item);
     });
     console.log('ListBooks', list);
-    let equalBooks = list.filter(item => {
-        return (item.isbn == isbn);
-    })
+    
     let  clone = [...store.getState().listbooks]
         clone = list;
         store.setState({
             listbooks: clone,
         });
+
+
+        let equalBooks = list.filter(item => {
+        return (item.isbn == isbn);
+    })
         console.log('EqualsBooks', equalBooks);
         console.log('EqualsBooks', equalBooks.length);
     if(equalBooks.length > 0){
         console.log('EqualsBooks true');
-    let  clone1 = [...store.getState().listbooks]
+    let  clone1 = [...store.getState().equalBooks]
     clone1 = equalBooks;
     store.setState({
             equalBooks: clone1,
