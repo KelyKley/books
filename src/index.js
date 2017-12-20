@@ -5,7 +5,9 @@ import {HashRouter, Route, Switch} from 'react-router-dom';
 import store from "./store";
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+// import {readAllBoards} from './actions'
 // import './styles/App.css';
+// readAllBoards()
 const Index = () => (
     <Provider store={store}>
         <App/>

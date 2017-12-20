@@ -6,31 +6,6 @@ import { searchISBN } from './actions';
 import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
 
-/*
-const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>                        
-                </button>
-                <a className="navbar-brand" href="#"><span className="glyphicon glyphicon-book"></span>    BookMe</a>
-                </div>
-                <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#"><span className="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                    <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
-                    <li><a href="#"><span className="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
-                </ul>
-                </div>
-            </div>
-            </nav>
-
-    )
-}*/
 
 const Search = () => {
     const onSubmit = (e) => {
@@ -51,26 +26,38 @@ const Search = () => {
     );
 }
 
-const Results = () => {
-    return (
-        <div className="card col-md-3 col-xs-4 col-sm-3">
-            <img className="portada" src="http://www.gandhi.com.mx/media/catalog/product/i/m/image_1165_1_276913.jpg" alt="Portada" />
-            <div className="container-card">
-                <h4><b>Cien años de soledad</b></h4>
-                <p>Gabriel Garcia Marquez</p>
-                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink>
+const Results = ({equalBooks}) => {
+let list = '';
+console.log('html',equalBooks);
+
+    if(equalBooks != undefined){
+     list = equalBooks.map((item, index) => {
+        return (
+            <div className="card col-md-3 col-xs-4 col-sm-3" key={index}>
+                <img className="portada" src={item.img} alt="Portada" />
+                <div className="container-card">
+                <h4><b>{item.title}</b></h4> 
+                <p>{item.author}</p> 
+                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
             </div>
         </div>
+        )
+    });
+    }else {
+      list = (<div>Ingresa Isbn</div>)
+    }
+    return(
+        <div className='row'>{list}</div>
     );
 }
 
-const Book = (selected) => {
+const Book = ({equalBooks, selected}) => {
     return (
         <div>
-
-            <Search />
-            <hr />
-            <Results />
+            
+            <Search/>
+            <hr/>
+            <Results equalBooks={equalBooks}/>
         </div>
     );
 }
