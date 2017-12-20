@@ -47,7 +47,7 @@ const App = ({listbooks, equalBooks, selected}) => {
                     <Route path="/home" render={() => <Book equalBooks={equalBooks} selected={selected} />} />
                     <Route path = "/details" render = { () => <Details selected={selected}/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
-                    <Route exact path="/" render={() => <Book />} />
+                    <Route exact path="/" render={() => <Book equalBooks={equalBooks} selected={selected}/>} />
                 </Switch>
             </HashRouter>
         </div>

@@ -27,8 +27,6 @@ const snapshotToArray = (snapshot, isbn) => {
         console.log('EqualsBooks', equalBook.length);
     if(equalBook.length > 0){
         console.log('EqualsBooks true');
-    // let  clone1 = [...store.getState().equalBooks]
-    // clone1 = equalBooks;
     store.setState({
             equalBooks: equalBook,
         });
