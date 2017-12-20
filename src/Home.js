@@ -6,6 +6,7 @@ import {searchISBN} from './actions';
 import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
 
+/*
 const Navbar = () => {
     return (
         <nav className="navbar">
@@ -29,7 +30,7 @@ const Navbar = () => {
             </nav>
 
     )
-}
+}*/
 
 const Search = () => {
     const onSubmit = (e) => {
@@ -56,7 +57,7 @@ const Results = () => {
             <div className="container-card">
                 <h4><b>Cien años de soledad</b></h4> 
                 <p>Gabriel Garcia Marquez</p> 
-                <button className="text-right button-sgte">Mas detalles...  </button> 
+                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
             </div>
         </div>
     );
@@ -65,7 +66,7 @@ const Results = () => {
 const Book = (selected) => {
     return (
         <div>
-            <Navbar/>
+            
             <Search/>
             <hr/>
             <Results/>
