@@ -29,3 +29,35 @@ body {
     transform: rotate(360deg); } }
 
 /*# sourceMappingURL=app.css.map */
+
+.navbar {
+  background: #1fa67a;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: black;
+}
+
+.navbar-brand{
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+@media (min-width: 768px){
+  .navbar {
+     border-radius: none;
+  }
+}
+
+.search{
+  width: 50vw;
+}
+
+.input-group{
+  margin: 2vh 25vw;
+}
