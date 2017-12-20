@@ -38,13 +38,13 @@ const Navbar = () => {
     )
 }
 
-const App = ({ selected }) => {
+const App = ({listbooks, equalBooks, selected}) => {
     return (
         <div>
             <Navbar/>
             <HashRouter>
                 <Switch>
-                    <Route path="/home" render={() => <Book selected={selected} />} />
+                    <Route path="/home" render={() => <Book equalBooks={equalBooks} selected={selected} />} />
                     <Route path = "/details" render = { () => <Details selected={selected}/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
                     <Route exact path="/" render={() => <Book />} />
@@ -53,6 +53,6 @@ const App = ({ selected }) => {
         </div>
     )
 }
-const mapToProps = ({ selected }) => ({ selected });
+const mapToProps = ({listbooks, equalBooks, selected}) => ({listbooks, equalBooks, selected});
 
 export default connect(mapToProps)(App);

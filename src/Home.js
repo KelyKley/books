@@ -50,26 +50,36 @@ const Search = () => {
     );
 }
 
-const Results = () => {
-    return(
-        <div className="card col-md-3 col-xs-4 col-sm-3">
-            <img className="portada" src="http://www.gandhi.com.mx/media/catalog/product/i/m/image_1165_1_276913.jpg" alt="Portada" />
-            <div className="container-card">
-                <h4><b>Cien años de soledad</b></h4> 
-                <p>Gabriel Garcia Marquez</p> 
+const Results = ({equalBooks}) => {
+let list = '';
+    if(equalBooks != undefined){
+     list = equalBooks.map((item, index) => {
+        return (
+            <div className="card col-md-3 col-xs-4 col-sm-3" key={index}>
+                <img className="portada" src={item.img} alt="Portada" />
+                <div className="container-card">
+                <h4><b>{item.title}</b></h4> 
+                <p>{item.author}</p> 
                 <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
             </div>
         </div>
+        )
+    });
+    }else {
+      list = (<div>Ingresa Isbn</div>)
+    }
+    return(
+        <div className='row'>{list}</div>
     );
 }
 
-const Book = (selected) => {
+const Book = ({equalBooks, selected}) => {
     return (
         <div>
             
             <Search/>
             <hr/>
-            <Results/>
+            <Results equalBooks={equalBooks}/>
         </div>
     );
 }
