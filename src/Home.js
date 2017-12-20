@@ -55,7 +55,7 @@ const Results = () => {
     );
 }
 
-const Book = () => {
+const Book = (selected) => {
     return (
         <div>
             <Navbar/>

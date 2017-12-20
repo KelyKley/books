@@ -19,8 +19,8 @@ const App = ({ selected }) => {
         <div>
             <HashRouter>
                 <Switch>
-                    <Route path="/home" render={() => <Home />} />
-                    <Route path = "/details" render = { () => <Details/>} />
+                    <Route path="/home" render={() => <Home selected={selected} />} />
+                    <Route path = "/details" render = { () => <Details selected={selected}/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
                     <Route exact path="/" render={() => <Home />} />
                 </Switch>
