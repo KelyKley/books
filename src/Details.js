@@ -41,7 +41,6 @@ const AllDetails = () => {
 const Details = () => {
     return (
         <div>
-            <Navbar />
             <AllDetails />
         </div>
     );
