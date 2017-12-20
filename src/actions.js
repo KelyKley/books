@@ -20,9 +20,10 @@ const snapshotToArray = (snapshot, isbn) => {
         store.setState({
             listbooks: clone,
         });
-
-    if(equalBooks.length > 0){
         console.log('EqualsBooks', equalBooks);
+        console.log('EqualsBooks', equalBooks.length);
+    if(equalBooks.length > 0){
+        console.log('EqualsBooks true');
     let  clone1 = [...store.getState().listbooks]
     clone1 = equalBooks;
     store.setState({
@@ -30,6 +31,7 @@ const snapshotToArray = (snapshot, isbn) => {
         });
     // console.log('lsttt', equalBooks)
     } else {
+        console.log('EqualsBooks false');
         searchItunes(isbn);
         searchIGoogleBook(isbn);
     }
@@ -39,8 +41,7 @@ const snapshotToArray = (snapshot, isbn) => {
 export const readAllBoards = (isbn) => {
     database
         .ref('books/')
-        .once('value')
-        .then(res => {
+        .on('value', res => {
             snapshotToArray(res, isbn)
         });
 }
@@ -59,8 +60,9 @@ async function searchItunes(isbn) {
     console.log('book-itunes', itunesJSON.results);
 
     if(itunesJSON.results.length > 0){
-
+        console.log('trueitunes')
     const keyBoard = database.ref('books/').push({
+        
         isbn: isbn,
         author : itunesJSON.results[0].artistName,
         title: itunesJSON.results[0].trackName,
@@ -90,8 +92,8 @@ async function searchIGoogleBook(isbn) {
     console.log('book-google', googleJSON.items);
 
     if(googleJSON.items){
-
-    const keyBoard = database.ref('books/').push({
+        console.log('truegoole')
+        const keyBoard = database.ref('books/').push({
         isbn : isbn,
         author : googleJSON.items[0].volumeInfo.authors[0],
         title: googleJSON.items[0].volumeInfo.title,

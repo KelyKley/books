@@ -52,6 +52,7 @@ const Search = () => {
 
 const Results = ({equalBooks}) => {
 let list = '';
+console.log('html',equalBooks);
     if(equalBooks != undefined){
      list = equalBooks.map((item, index) => {
         return (
