@@ -27,8 +27,6 @@ const Search = () => {
 
 const Results = ({equalBooks}) => {
 let list = '';
-console.log('html',equalBooks);
-
     if(equalBooks != undefined){
      list = equalBooks.map((item, index) => {
         return (
@@ -37,6 +35,7 @@ console.log('html',equalBooks);
                 <div className="container-card">
                 <h4><b>{item.title}</b></h4> 
                 <p>{item.author}</p> 
+                <p>{item.price}</p> 
                 <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
             </div>
         </div>
