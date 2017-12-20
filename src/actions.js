@@ -101,7 +101,7 @@ async function searchIGoogleBook(isbn) {
         title: googleJSON.items[0].volumeInfo.title,
         description: googleJSON.items[0].volumeInfo.description,
         img: googleJSON.items[0].volumeInfo.imageLinks.thumbnail,
-        price: (googleJSON.items[0].saleInfo.listPrice.amount)? googleJSON.items[0].saleInfo.listPrice.amount : '0.00'
+        price: (googleJSON.items[0].saleInfo.listPrice)? googleJSON.items[0].saleInfo.listPrice.amount : '0.00'
 
     });
     }
