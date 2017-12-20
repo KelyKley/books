@@ -6,31 +6,6 @@ import {searchISBN} from './actions';
 import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
 
-/*
-const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>                        
-                </button>
-                <a className="navbar-brand" href="#"><span className="glyphicon glyphicon-book"></span>    BookMe</a>
-                </div>
-                <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#"><span className="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                    <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
-                    <li><a href="#"><span className="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
-                </ul>
-                </div>
-            </div>
-            </nav>
-
-    )
-}*/
 
 const Search = () => {
     const onSubmit = (e) => {
@@ -53,6 +28,7 @@ const Search = () => {
 const Results = ({equalBooks}) => {
 let list = '';
 console.log('html',equalBooks);
+
     if(equalBooks != undefined){
      list = equalBooks.map((item, index) => {
         return (

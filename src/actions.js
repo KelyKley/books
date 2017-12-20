@@ -20,19 +20,19 @@ const snapshotToArray = (snapshot, isbn) => {
         });
 
 
-        let equalBooks = list.filter(item => {
+        let equalBook = list.filter(item => {
         return (item.isbn == isbn);
     })
-        console.log('EqualsBooks', equalBooks);
-        console.log('EqualsBooks', equalBooks.length);
-    if(equalBooks.length > 0){
+        console.log('EqualsBooks', equalBook);
+        console.log('EqualsBooks', equalBook.length);
+    if(equalBook.length > 0){
         console.log('EqualsBooks true');
-    let  clone1 = [...store.getState().equalBooks]
-    clone1 = equalBooks;
+    // let  clone1 = [...store.getState().equalBooks]
+    // clone1 = equalBooks;
     store.setState({
-            equalBooks: clone1,
+            equalBooks: equalBook,
         });
-    // console.log('lsttt', equalBooks)
+    console.log('lsttt', store.getState().equalBooks)
     } else {
         console.log('EqualsBooks false');
         searchItunes(isbn);
