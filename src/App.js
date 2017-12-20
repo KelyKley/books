@@ -11,14 +11,16 @@ import {
 import './css/app.css';
 
 import Home from './Home';
+import Details from './Details';
+
 
 const App = ({ selected }) => {
     return (
         <div>
             <HashRouter>
                 <Switch>
-                    <Route path="/home" render={() => <Home />} />
-                    {/* <Route path = "/details" render = { () => <Details NavBar={NavBar} Information={Information}/>} /> */}
+                    <Route path="/home" render={() => <Home selected={selected} />} />
+                    <Route path = "/details" render = { () => <Details selected={selected}/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
                     <Route exact path="/" render={() => <Home />} />
                 </Switch>

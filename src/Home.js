@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 // import Utils from './Utils.js';
+import { Redirect, NavLink } from "react-router-dom";
 import {searchISBN} from './actions';
-
- //import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
-
+// import { NavLink, Redirect } from './C:/Users/Maryory/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-router-dom';
+import Details from './Details'
+// import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -55,13 +56,13 @@ const Results = () => {
             <div className="container-card">
                 <h4><b>Cien años de soledad</b></h4> 
                 <p>Gabriel Garcia Marquez</p> 
-                <button className="text-right button-sgte">Mas detalles...</button> 
+                <button className="text-right button-sgte">Mas detalles...  </button> 
             </div>
         </div>
     );
 }
 
-const Book = () => {
+const Book = (selected) => {
     return (
         <div>
             <Navbar/>
