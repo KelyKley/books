@@ -10,17 +10,44 @@ import {
 } from 'react-router-dom';
 import './css/app.css';
 
-import Home from './Home';
+import Book from './Home';
+import Details from './Details';
+
+const Navbar = () => {
+    return (
+        <nav className="navbar">
+            <div className="container-fluid">
+                <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>                        
+                </button>
+                <a className="navbar-brand" href="#"><span className="glyphicon glyphicon-book"></span>    BookMe</a>
+                </div>
+                <div className="collapse navbar-collapse" id="myNavbar">
+                <ul className="nav navbar-nav navbar-right">
+                    <li><a href="#"><span className="glyphicon glyphicon-user"></span> Regístrate</a></li>
+                    <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+                    <li><a href="#"><span className="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+
+    )
+}
 
 const App = ({ selected }) => {
     return (
         <div>
+            <Navbar/>
             <HashRouter>
                 <Switch>
-                    <Route path="/home" render={() => <Home />} />
-                    {/* <Route path = "/details" render = { () => <Details NavBar={NavBar} Information={Information}/>} /> */}
+                    <Route path="/home" render={() => <Book selected={selected} />} />
+                    <Route path = "/details" render = { () => <Details selected={selected}/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
-                    <Route exact path="/" render={() => <Home />} />
+                    <Route exact path="/" render={() => <Book />} />
                 </Switch>
             </HashRouter>
         </div>
