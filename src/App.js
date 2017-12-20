@@ -10,14 +10,14 @@ import {
 } from 'react-router-dom';
 import './css/app.css';
 
-import Home from './Home';
+import Book from './Home';
 
 const App = ({ selected }) => {
     return (
         <div>
             <HashRouter>
                 <Switch>
-                    <Route path="/home" render={() => <Home />} />
+                    <Route path="/home" render={() => <Book />} />
                     {/* <Route path = "/details" render = { () => <Details NavBar={NavBar} Information={Information}/>} /> */}
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
                     <Route exact path="/" render={() => <Home />} />
