@@ -11,6 +11,8 @@ import {
 import './css/app.css';
 
 import Home from './Home';
+import Details from './Details';
+
 
 const App = ({ selected }) => {
     return (
@@ -18,7 +20,7 @@ const App = ({ selected }) => {
             <HashRouter>
                 <Switch>
                     <Route path="/home" render={() => <Home />} />
-                    {/* <Route path = "/details" render = { () => <Details NavBar={NavBar} Information={Information}/>} /> */}
+                    <Route path = "/details" render = { () => <Details/>} />
                     <Route path='/plantilla' render={() => <Redirect to="/home" />} />
                     <Route exact path="/" render={() => <Home />} />
                 </Switch>

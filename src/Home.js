@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 // import Utils from './Utils.js';
+import { Redirect, NavLink } from "react-router-dom";
 import {searchISBN} from './actions';
-
+// import { NavLink, Redirect } from './C:/Users/Maryory/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-router-dom';
+import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
 
 const Navbar = () => {
@@ -58,6 +60,10 @@ const Book = () => {
         <div>
             <Navbar/>
             <Search/>
+            <button>Detalles
+            <Redirect to="/details" />
+
+            </button>
         </div>
     );
 }
