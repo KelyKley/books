@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // import Utils from './Utils.js';
 import { Redirect, NavLink } from "react-router-dom";
-import {searchISBN} from './actions';
+import { searchISBN } from './actions';
 // import { NavLink, Redirect } from './C:/Users/Maryory/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-router-dom';
 import Details from './Details'
 // import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
@@ -34,30 +34,31 @@ const Navbar = () => {
 
 const Search = () => {
     const onSubmit = (e) => {
-		e.preventDefault();
-		console.log ( 'this..', this);//con truco, es el connect el this.
-    searchISBN(this.isbn.value);
-     this.isbn.value = "";
-  }
+        e.preventDefault();
+        console.log('this..', this);//con truco, es el connect el this.
+        searchISBN(this.isbn.value);
+        this.isbn.value = "";
+    }
     return (
         <div className="input-group">
-        <form className="form-search" onSubmit = {onSubmit}>
-            <span className="input-group-addon"><i className="glyphicon glyphicon-search"></i></span>
-            <input id="search" type="text" className="search form-control" ref={(e) => this.isbn = e}  placeholder="Buscar..."/>
-            <button type="submit" className="btn btn-default">Submit</button>
+            <form className="form-search" onSubmit={onSubmit}>
+                <input id="search" type="text" className="search form-control" ref={(e) => this.isbn = e} placeholder="Buscar..." />
+                <button type="submit" className="btn btn-default btn_search ">     
+                      <i className="glyphicon glyphicon-search"></i>
+                </button>
             </form>
         </div>
     );
 }
 
 const Results = () => {
-    return(
+    return (
         <div className="card col-md-3 col-xs-4 col-sm-3">
             <img className="portada" src="http://www.gandhi.com.mx/media/catalog/product/i/m/image_1165_1_276913.jpg" alt="Portada" />
             <div className="container-card">
-                <h4><b>Cien años de soledad</b></h4> 
-                <p>Gabriel Garcia Marquez</p> 
-                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink> 
+                <h4><b>Cien años de soledad</b></h4>
+                <p>Gabriel Garcia Marquez</p>
+                <NavLink to="/details" className="text-right button-sgte">Mas detalles...  </NavLink>
             </div>
         </div>
     );
@@ -66,10 +67,10 @@ const Results = () => {
 const Book = (selected) => {
     return (
         <div>
-            
-            <Search/>
-            <hr/>
-            <Results/>
+
+            <Search />
+            <hr />
+            <Results />
         </div>
     );
 }

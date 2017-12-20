@@ -41,10 +41,12 @@ body {
 .img_book {
   width: 350px;
   height: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price_d {
-  font-size: 2.4em;
+  font-size: 2.6em;
 }
 
 .border {
@@ -57,4 +59,24 @@ h1 {
 
 .green {
   color: #1FA67A;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: white;
+}
+
+.btn_search {
+  background-color: #1FA67A;
+}
+
+.btn_search i {
+  color: white;
+}
+
+.rowDetails {
+  margin: 10% 0%;
 }
