@@ -30,7 +30,7 @@ const Search = () => {
     return (
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input id="email" type="text" class="search form-control" name="email" placeholder="Email"/>
+            <input id="email" type="text" class="search form-control" name="email" placeholder="Buscar"/>
         </div>
     );
 }
